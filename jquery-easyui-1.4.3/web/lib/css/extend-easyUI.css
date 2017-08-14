@@ -1,0 +1,214 @@
+.validatebox-invalid, .textbox-invalid {
+	background-color: #FFFFFF;
+	border: 1px solid #A7A7A7;
+	box-shadow:0px 0px 5px 1px #A7A7A7;
+}
+.datagrid {
+	clear: both;
+/*	margin-top: 47px;*/
+    margin-top: 7px;
+}
+.datagrid .panel-body, .datagrid-header, div.datagrid-header table td {
+	background: none;
+}
+.popupWrapper .datagrid {
+	border-top: none;
+	width: 94.95%;
+	margin: 10px auto;
+}
+div.datagrid-header div.datagrid-cell {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color : #999;/* 修改datagrid网格列header文字颜色 */
+}
+div.datagrid-header table td {
+	border-style: solid;
+	background-color: #f8f8f8;
+	font-weight: bold;
+}
+div.datagrid-header table {
+	height: 35px;
+}
+div.datagrid-header {
+	height: 34px;
+}
+div.datagrid-body div.datagrid-cell a {
+	cursor: pointer;
+	color: #4a4a4a;
+	text-decoration: underline;
+	font-weight: bold;/*网格数据超链接样式修改*/
+	color: #090001;
+}
+div.datagrid-body div.datagrid-cell a:hover {
+	/* color: #4f87b6; */
+	color: #eb1d21;
+	text-shadow: 0 0 50px #eb1d21;
+}
+div.datagrid-body div.datagrid-cell {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+div.datagrid-body table td {
+	border-style: solid;
+}
+/* .datagrid-view .datagrid-header table.datagrid-htable td {
+	text-align: center;
+} */
+div.datagrid-empty {
+	text-align: center;
+	margin-top: -12px;
+}
+div.datagrid-empty img {
+	width: 52px;
+	height: 83px;
+}
+div.datagrid-empty p {
+	font-size: 18px;
+	padding-top: 2px;
+}
+.pagerButtons {
+	padding: 0 5px;
+}
+span.switchbutton-on {
+	background: #5bda4d;
+	color: #fff;
+}
+span.switchbutton-handle {
+	border-radius: 20px;
+}
+span.switchbutton {
+	border-radius: 15px;
+}
+span.datagrid-sort-icon {
+	font-family: Simsun;
+}
+.easyui-datebox {
+	width: 80px;
+}
+span.datebox {
+	border: 1px solid #a7a7a7;
+}
+div.easyui-tabs {
+	clear: both;
+}
+div.easyui-tabs .tabs-panels .panel {
+	margin: 0 10px 10px 10px;
+}
+.panelElm .panelBody .datagrid, .combo-panel .datagrid {
+	border-top: none;
+	margin-top: 0px;
+}
+.rightPart .panelElm .panelBody .datagrid .datagrid-wrap {
+	border: 0;
+}
+.leftPart .datagrid {
+	margin-top: 0px;
+}
+/*针对firefox*/
+@-moz-document url-prefix() {
+   .leftPart .datagrid {
+		margin-top: -2px;
+	}
+}
+/*替换datagrid 排序图标样式*/
+.datagrid-sort-desc .datagrid-sort-icon {
+  background: url('../plugin/jquery-easyui-1.4.3/themes/metro/images/datagrid_icons1.png') no-repeat -16px center;
+}
+.datagrid-sort-asc .datagrid-sort-icon {
+  background: url('../plugin/jquery-easyui-1.4.3/themes/metro/images/datagrid_icons1.png') no-repeat 0px center;
+}
+.datagrid-mask-msg{z-index:1;}/*datagrid数据加载*/
+/* span.textbox.spinner {
+	border-color: #A7A7A7;
+}
+span.textbox.spinner input.textbox-text {
+	font-size: 13px;
+}
+span.textbox.spinner span.textbox-addon {
+	top: 3px;
+} */
+/*.filebox {
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#f6f6f6', GradientType=0);
+	background-color: #ffffff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #cccccc;
+	cursor: pointer;
+	color: #666666;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+	position: relative;
+}
+.filebox .textbox-button:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0f0f0), color-stop(1, #ffffff));
+	background: -moz-linear-gradient(top, #f0f0f0 5%, #ffffff 100%);
+	background: -webkit-linear-gradient(top, #f0f0f0 5%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f0f0f0 5%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f0f0f0 5%, #ffffff 100%);
+	background: linear-gradient(to bottom, #f0f0f0 5%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0',endColorstr='#ffffff', GradientType=0);
+	background-color: #f0f0f0;
+}
+.filebox-label {
+  	font-size: 15px;
+}
+.filebox .textbox-text {
+	font-size: 12px;
+	margin: 1px;
+}*/
+/* .datagrid .panel-body {border-right:none;} */  /* 去外侧边框 */
+/*.datagrid .datagrid-view2 tr td:last-child {border-right:none;} */ /* 去内侧边框 *//*11-17注释*/
+.datagrid .datagrid-pager {border-top:none !important;}  /* 保留底部上边框 */
+/* .datagrid .datagrid-body tr:last-child td {border-bottom:none;} */  /* 保留底部下边框 */
+/* 便利贴 */
+/* .sticky {
+	width: 200px;
+	height: 150px;
+	background: #fdaf07;
+	border: 1px solid #ccc;
+	position: absolute; 
+	top: 400px;
+	box-shadow: 0 3px 10px 0 #999;
+}
+.sticky .sticky-title {
+	padding: 5px;
+	font-size: 14px;
+}
+.sticky .sticky-title .icons {
+	float: right;
+}
+.sticky .sticky-title .icons i {
+	margin: 2px;
+}
+.sticky .sticky-title input {
+	width: 140px;
+	background: none;
+	border: none;
+	outline:none;	
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+.sticky textarea {
+	width: 95%;
+	height: 110px;
+	padding: 5px;
+	border: none;
+	overflow: hidden;
+	outline:none;
+	background: none;
+	color: #FFFFFF;
+} */

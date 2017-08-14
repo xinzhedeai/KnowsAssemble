@@ -1,0 +1,44 @@
+/*垂直居中*/
+/**
+ * 注意：此css中的样式，两种类型的弹窗样式ttBox 和ttbox，仅仅是大小写的区别。在html5使用的时候，两种样式会产生影响的。
+ * 解决方法，需要在html头上添加约束 ,从而保证样式名称是区分大小写的。
+ * <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ */
+.verticalAlign{ vertical-align:middle; display:inline-block; height:100%; margin-left:-1px;}
+
+.xcConfirm .xc_layer{position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #666666; opacity: 0.5; z-index: 2147000000;}
+.xcConfirm .popBox{position: fixed; left: 50%; top: 50%; background-color: #ffffff; z-index: 2147000001; width: 300px;/*  height: 300px; */max-height:535px; margin-left: -100px; margin-top: -150px;/* border-radius: 5px;  font-weight: bold; color: #535e66; */box-shadow: 1px 3px 11px #473e3e;}
+.xcConfirm .popBox .ttBox{height: 39px; line-height: 15px; padding: 10px 30px; border-bottom: solid 1px #e5e5e5; text-align:left;}
+.xcConfirm .popBox .ttBox .tt{font-size: 18px; display: block; height: 30px; position: relative;margin-left: -10px;}
+.xcConfirm .popBox .ttBox .clsBtn{display: none; cursor: pointer; width: 12px; height: 12px; position: absolute; top: 22px; right: 30px; background: url(../img/images/icons.png) -48px -96px no-repeat;}
+.xcConfirm .popBox .txtBox{margin: 9px 6px 3px 6px;/*  height: 100px; */max-height:400px;/*  overflow: hidden;*/ overflow:auto; text-align: center;min-height: 108px;line-height: 33px;}
+.xcConfirm .popBox .txtBox .bigIcon{/* float: left; */ width: 48px; height: 48px; background-image: url(../img/images/icons.png); background-repeat: no-repeat; background-position: 48px 0;  margin: 9px auto;}
+.xcConfirm .popBox .txtBox p{ /* height: 84px; margin-top: 16px;  *//* padding-left:15px; line-height: 26px; */ /* overflow-x: hidden; overflow-y: auto; */}
+.xcConfirm .popBox .txtBox p input{width: 364px; height: 30px; border: solid 1px #eef0f1; font-size: 18px; margin-top: 6px;}
+.xcConfirm .popBox .btnArea{border-top: solid 1px #e5e5e5; height:auto;}
+.xcConfirm .popBox .btnGroup{float: right; text-align: center; margin:8px auto; padding-right:10px;}
+.xcConfirm .popBox .btnGroup .sgBtn{margin-top: 0px; margin-left: 7px;}
+.xcConfirm .popBox .sgBtn{display: inline-block; cursor: pointer; /*float: left;*/ width: 67px; height: 25px; line-height: 23px; text-align: center; color: #FFFFFF; /* border-radius: 5px; */}
+.xcConfirm .popBox .sgBtn.ok{background-color: #0095d9; color: #FFFFFF;}
+.xcConfirm .popBox .sgBtn.cancel{background-color: #546a79; color: #FFFFFF;}
+
+.xcConfirm .popbox{position: fixed; left: 50%; top: 40%; background-color: #ffffff; z-index: 2147000001; width: 400px; height: 400px; margin-left: -100px; margin-top: -150px; border-radius: 5px; font-weight: bold; color: #535e66;}
+.xcConfirm .popbox .ttbox{height: 60px; line-height: 30px; padding: 14px 30px; border-bottom: solid 1px #eef0f1;}
+.xcConfirm .popbox .ttbox .tt{font-size: 18px; display: block; float: left; height: 30px; position: relative;}
+.xcConfirm .popbox .ttbox .clsBtn{display: none; cursor: pointer; width: 12px; height: 12px; position: absolute; top: 22px; right: 30px; background: url(../img/images/icons.png) -48px -96px no-repeat;}
+.xcConfirm .popbox .txtbox{margin: 10px 50px; height: 250px; overflow: hidden;}
+.xcConfirm .popbox .txtbox input{width: 245px; height: 50px; border: solid 1px #ccc; font-size:14px; font-weight:normal; margin:12px 0px 0px 30px; padding-left:12px; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;}
+.xcConfirm .popbox .txtbox input:focus{border-color: #66afe9; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);}
+.xcConfirm .popbox .txtbox .bigIcon{float: left; width: 48px; height: 48px; background-image: url(../img/images/icons.png); background-repeat: no-repeat; background-position: 48px 0;}
+.xcConfirm .popbox .txtbox p{text-align:center; height: 35px; margin-top: 16px; padding-left:15px; line-height: 26px; overflow-x: hidden; overflow-y: auto; font-size: 18px;}
+.xcConfirm .popbox .txtbox p input{width: 364px; height: 30px; border: solid 1px #eef0f1; font-size: 18px; margin-top: 6px;}
+.xcConfirm .popbox .btnArea{border-top: solid 1px #eef0f1;}
+.xcConfirm .popbox .btngroup{float:left;}
+.xcConfirm .popbox .btngroup .sgbtn{margin-top: 14px; margin-right: 10px;}
+.xcConfirm .popbox .sgbtn{display: block; cursor: pointer; float: left; width: 95px; height: 35px; line-height: 35px; text-align: center; color: #FFFFFF; border-radius: 5px;}
+.xcConfirm .popbox .sgbtn.regist{background-color: #d9534f; color: #FFFFFF; margin-left:80px;}
+.xcConfirm .popbox .sgbtn.login{background-color: #337ab7; color: #FFFFFF; margin-left:40px;}
+.xcforget{margin:12px 0px 0px 30px; float:left;}
+.xctxt{margin:12px 0px 0px 16px; float:left;}
+.xctxt span{float:left;}
+.xctxt img{margin-left:15px; float:left;}
