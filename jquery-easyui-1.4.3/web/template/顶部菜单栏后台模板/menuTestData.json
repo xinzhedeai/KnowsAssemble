@@ -1,0 +1,24 @@
+[
+  {
+    "title": "系统配置",
+    "link": "/sys-conf",
+    "subMenu": [
+      {
+        "menu_id": "317208e8-7257-11e5-b1ca-00163e000884",
+        "title": "基本信息",
+        "link": "/sys-conf/basic-info.html"
+      }
+    ]
+  },
+  {
+    "title": "运单管理",
+    "link": "/waybill",
+    "subMenu": [
+      {
+        "menu_id": "31720f13-7257-11e5-b1ca-00163e000884",
+        "title": "新添运单",
+        "link": "/waybill/add-waybill.html"
+      }
+    ]
+  }
+]

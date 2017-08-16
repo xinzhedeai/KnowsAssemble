@@ -232,3 +232,96 @@ function fillWindow() {
 		$('.main-body').css('min-height', height);
 	}
 }
+
+
+/**
+ * 提取模态框下增加和修改的公用方法
+ * var funcObj = {},
+ * funcObj.add = $commodity.addCommod, //添加方法
+ * funcObj.mod = $commodity.modifyCommod;//修改方法
+ * confirmFunc($commodity.commodityModal, $(this), funcObj);//将两种方法放到对象中直接交给公用方法使用
+ */
+function confirmFunc(){
+	var modalEle = arguments[0], targetBtn = arguments[1], callback = arguments[2]; 
+	if ($(modalEle).find('form').form('validate')) {
+		if (targetBtn.parents('.modal').hasClass('editForm')) {
+			var option = {
+				btn : parseInt("0011", 2),
+				onOk : function() {
+					callback.mod();
+				},
+				onCancel : function() {
+					clearModalForm(modalEle);
+				}
+			}
+			$xcAlert("确定修改？", $xcAlert.typeEnum.info, option);
+		} else {
+			var option = {
+				btn : parseInt("0011", 2),
+				onOk : function() {
+					callback.add();
+				},
+				onCancel : function() {
+					clearModalForm(modalEle);
+				}
+			}
+			$xcAlert("确定添加？", $xcAlert.typeEnum.info, option);
+		}
+	}
+}
+
+/***
+ * 根据不同需求,对操作数据进行限制,然后弹窗信息提醒
+ * 结果对象validRes,如果flag值为false，则数据操作不合法，进行提示，否则可以操作，并且row里面存着要操作的数据
+ * 
+ * 使用方法：
+ * var validRes = validateRow($commodity.commodityDatagrid, 'multi');
+	if (validRes.flag){
+		var row = validRes.row;
+		var option = {
+			title : '操作提示',
+			btn : parseInt('0011', 2),
+			onOk : function() {
+				var idFields = [ 'commodity_number', 'commodity_sku', 'supplier_id' ], commdIds = $($commodity.commodityDatagrid).getIdsDatagridEasyUI(idFields);
+				$commodity.delCommod(commdIds);
+			}
+		};
+		$xcAlert('确认删除？', $xcAlert.typeEnum.info, option);
+	}
+ */
+function validateRow() {
+	var grid = arguments[0], type = arguments[1], returnObj = {}, row = $(grid).datagrid('getChecked'), flag = true;
+	switch (type){
+		case 'multi'://没有选择一条或多条数据的情况
+			if (row == null || row.length < 1) {
+				flag = false;
+				$xcAlert('您还未选择要操作的数据', $xcAlert.typeEnum.info);
+			}
+			break;
+		case 'single'://类似于修改时，只能同时操作一条数据的情况
+			if (row && row.length != 1) {
+				flag = false;
+				$xcAlert('请选择一条数据进行操作', $xcAlert.typeEnum.info);
+			}
+			break;
+		case 'unNull'://根据添加订单时，网格数据不能为空
+			row = $(grid).datagrid('getRows');
+			if (row == null || row.length < 1) {
+				flag = false;
+				$xcAlert('列表中数据为空,请添加后进行操作', $xcAlert.typeEnum.info);
+			}
+			break;
+		default : 
+			break;
+	}
+	returnObj.row = row;
+	returnObj.flag = flag;
+	return returnObj;
+};
+
+/**
+ * 模态框关闭时,清空上传控件
+ */
+$('.upload-modal').on('hidden.bs.modal', function () {
+	$(this).find('.uploadModalBody > div').fileUpload('clearFiles');
+})

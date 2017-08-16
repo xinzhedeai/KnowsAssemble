@@ -280,3 +280,57 @@ function getFileList() {
 		$xcAlert("getFileList : 参数错误, 不支持参数", $xcAlert.typeEnum.error);
 	}
 }
+
+/**
+ * pluploder另一种调用方法,不在弹窗中调用,直接上传文件到指定路径接口中
+ 	方便,但是在ie8下会出现兼容性的问题
+ */
+
+	//pluploader实例
+	var uploader = new plupload.Uploader({
+		browse_button: 'feedback-pickfile',
+		container: 'container',
+		url: contextPath + '/v1/api/common/upload-files.form',
+		multipart_params: {
+			module_cd: '/suggestion/'
+		},
+		filters: {
+			max_file_size: '500kb',
+			mime_types: [{
+				title: 'pictures',
+				extensions: 'jpg,jpeg,gif,png'
+			}, {
+				title: 'files',
+				extensions: 'zip,rar,txt,xls,xlsx'
+			}]
+		},
+		flash_swf_url: '/lib/plugin/plupload-2.1.2/Moxie.swf',// Flash settings
+		silverlight_xap_url: '/lib/plugin/plupload-2.1.2/Moxie.xap',// Silverlight settings
+		init: {
+			Init: function(up) {
+				var navi = getNavigator();
+				if(navi === 'IE 8.0' || navi === 'IE 9.0') {
+					$('#container').find('.moxie-shim').css({width: 67, height: 25, top: 0});
+				}
+			},
+			FilesAdded: function(up, files) {
+				$('.feedback-body .feedback-content .tip').empty();
+				var count = 3 - $('.feedback-body .feedback-content .filelist').children().length;
+				for (var i=0; i<count && i<files.length; i++) {
+					var file = files[i], name = file.name;
+					if (name.length > 30) {
+						name = name.substr(0, 12) + '...' + name.substr(name.length - 15, 15);
+					}
+					$('.feedback-body .feedback-content .filelist').append('<p title="' + file.name + '" id="' + file.id + '">' + name + ' (' + plupload.formatSize(file.size) + ')<i class="icon icon-remove-circle" title="删除"></i></p>');
+				}
+				$.each(files.slice(count), function(i, file) {
+					uploader.removeFile(file);
+				});
+				up.start();
+			},
+			Error: function(up, err) {
+				$('.feedback-body .feedback-content .tip').empty().append('<p class="file-error">Error #' + err.code + ': ' + err.message + '</p>');
+			}
+		}
+	});
+	uploader.init();

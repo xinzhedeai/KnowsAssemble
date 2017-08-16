@@ -1,0 +1,26 @@
+[
+  {
+    "title": "基本信息",
+    "link": "/basic",
+    "subMenu": [
+      {
+        "menu_id": "86ac3be6-390a-11e7-a2af-74d02b7d5f71",
+        "icon": "role",
+        "title": "角色信息",
+        "link": "/basic/role.html"
+      }
+    ]
+  },
+  {
+    "title": "商品",
+    "link": "/commodity",
+    "subMenu": [
+      {
+        "menu_id": "cb67d427-390a-11e7-a2af-74d02b7d5f71",
+        "icon": "commodity",
+        "title": "商品管理",
+        "link": "/commodity/commodity.html"
+      }
+    ]
+  }
+]

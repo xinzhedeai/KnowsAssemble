@@ -1,0 +1,79 @@
+/*顶部导航栏栏*/
+body{font-size:12px;}
+.pagesHeader{width:100%;height:50px;background-color:#373d41;line-height:50px;position:fixed;z-index:999;}
+.header-title{float:left;color:#F5F5F5}
+.header-title span{font-size:21px}
+.header-userInfo{float:right}
+.header-userInfo a{display:inline-block;color:#F5F5F5;padding:0 10px;text-decoration: none;}
+.header-userInfo a:hover{background-color:#FFF;color:#000;font-size:14px;font-weight:500}
+
+/**
+ * 菜单栏样式
+ */
+
+/* @charset "utf-8"; */
+/* body{font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";} */
+/*��ർ����*/
+.down-main{position: absolute;width: 100%;top: 50px;bottom: 0px;z-index: 100;}
+.left-full{ width:160px; display:block;}
+.right-full{ left:160px;}
+.left-off{ width:48px; display:block;}
+.right-off{ left:48px;}
+.right-product{position: absolute;top: 0px;bottom: 0px;right: 0px;background: #FFF;}
+.sidebar-fold{ height: 30px;width: 100%;background: #394555;color: #aeb9c2;text-align: center; height:30px; font-size: 12px;cursor: pointer;}
+.sidebar-fold span{ line-height:30px;}
+/*.left-main{ bottom: 0px; top:0px; position:absolute; background-color:#293038;}*/
+.left-main{ bottom: 0px; top:50px; z-index:100; position:fixed; background-color:#293038;}
+.sBox ul li{ list-style-type:none; position:relative;text-align: center;}
+
+.sBox ul{ padding:0px; position: relative; margin:0px;background-color: #333744;}
+.sBox ul li a{display: block;width: 100%;height: 40px;line-height: 40px;overflow: hidden; text-decoration:none; color:#FFF;}
+.sBox .sublist-icon{ width:48px; text-align:center;}
+.subNavBox .subNav{ height:40px; line-height:40px; color: #fff;}
+.subNavBox .subNav .title-icon{ width:48px; text-align:center;}
+.sBox .sublist-down{ background-color:#22282e;}
+.sBox .sublist-up{ background-color:#42485B;}
+.sBox .sublist-up ul{ display:none;}
+.sBox .sublist-title{ cursor:pointer; font-size: 12px; letter-spacing:0.5px;margin-left: -10px;}
+.sBox .sub-title{letter-spacing:1px;}
+.sBox .subNav:hover{ background-color:#00C1DE;}
+.sBox ul li a:link{color:#fff;}
+/* .sBox ul li a:visited{background-color:#00C1DE;}
+.sBox ul li a:hover{background-color:#4A5064;} */
+.sBox ul li a:hover, .sBox ul li a:active{background-color:#00C1DE;}
+
+
+.sBox span{ line-height:36px;font-size: 12px;float:left;}
+.sBox ul li .showtitle{ text-align:center; line-height:40px; position:absolute; z-index:100; background-color:#545f71; left:55px; padding:0px 10px 0px 10px; color:#FFF; min-width:120px; display:none;}
+.sBox ul li .showtitle img {position: absolute;left: -6px; top: 14px;}
+.left-off .sBox ul li .sub-title{ display:none;}
+.left-off .sBox .sublist-title{ display:none;}
+
+.dropdown-menu{ min-width:10px;}
+
+/*============��̨ģ��dermadefault.css==============*/
+.navbar-mystyle{background-color:#373d41;/* #0099cc; #09C; */ color:#FFF;/* box-shadow: 5px 2px 4px #624b4b; */}
+.mystyle-brand{ background-color:#0087b4; display:block;}
+
+/*��������ʽ���*/
+.navbar-mystyle .navbar-nav li .mystyle-color:hover{ background-color:#0087b4; color:#FFF;}
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:focus{/* color:#FFF; */}
+.navbar-default .navbar-brand{color:#FFF;}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{ background-color:#0087b4; color:white;}
+.navbar-default .navbar-brand:hover{color:#FFF;}
+.navbar-default .dropdown-menu{ width:100%; min-width:1px; border:0px; border-top:1px solid #e5e5e5;}
+/*���ذ�ť*/
+.navbar-default .navbar-toggle{ border-color:#FFF;}
+.navbar-default .navbar-toggle .icon-bar{ background-color:#FFF;}
+.topbar-num{font-size: 12px;color: #fff;background: #f90;border-radius: 5px;padding: 2px 5px;
+display: inline-block;line-height: 16px;vertical-align: top;text-align: center;}
+
+.li-border{border-right: 1px solid #0087b4; font-size:14px;}
+/*��ർ��ѡ����ʽ*/
+.sBox ul .active{ background-color:#09C;}
+
+/*��ť*/
+.btn-mystyle{color: #FFF;background-color: #09C;}
+
+/*左侧菜单栏当前页标记样式类*/
+.curPageFlag{background-color: #00a2ca;}
