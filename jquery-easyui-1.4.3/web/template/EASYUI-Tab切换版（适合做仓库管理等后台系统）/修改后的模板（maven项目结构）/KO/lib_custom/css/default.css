@@ -1,0 +1,6 @@
+body{padding:10px !important;}
+.dateTd{width: 500px; min-width: 350px;}
+.dateTd > input {width:initial; display: inline-block;}
+.searchForm th{vertical-align: middle !important;}
+.funcButton{float: right;height: 37px;}
+.clearFloat{clear: both;}

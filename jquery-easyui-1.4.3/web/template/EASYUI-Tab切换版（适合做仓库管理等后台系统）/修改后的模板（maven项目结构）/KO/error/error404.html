@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Clearance System</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="Double" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script type="text/javascript">  
+        var i = 3;  
+        var intervalid;  
+/*         intervalid = setInterval("fun()", 1000);   */
+        function fun() {  
+            if (i == 0) {  
+                window.location.href = "../basicInfo/companyInfo.html";   
+                clearInterval(intervalid);  
+            }  
+            document.getElementById("autoForward").innerHTML = '<span class="millisec">' + i +'</span>秒后为您自动跳转到首页';  
+            i--;   
+        }  
+</script>    
+<style type="text/css">
+	body {
+		text-align: center;
+	}
+	div {
+		width: 500px;
+		height: 500px; 
+		margin: 0 auto; 
+		background: url(/lib/img/pic/pic_error_404.png) no-repeat right;
+	}
+	p {
+		text-align: left; 
+		margin: 0; 
+	}
+	a {
+		text-decoration : none;
+	}
+	.millisec{color: #7a2828;font-size: 30px;font-weight: bold;margin-right: 5px;}
+</style>
+</head>
+<body>
+	<div>
+		<p style="font-size: 150px; padding-top: 150px; color: #d34c49;"><b>404</b></p>
+		<p style="font-size: 40px; color: #8f6535; margin-top: -25px;"><b>页面未找到</b></p>
+		<p style="font-size: 20px; padding-left: 5px;"><a href="/index.html">网站首页</a></p>
+		<p style="font-size: 20px; padding-left: 5px;" id="autoForward"></p>
+	</div>
+</body>
+</html>
